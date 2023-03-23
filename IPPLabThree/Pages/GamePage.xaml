@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:IPPLabThree.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="GamePage">
+      Title="GamePage"
+      Loaded="Page_Loaded">
 
     <Grid Background="Blue">
         <Rectangle x:Name="player" Fill="Yellow" MaxHeight="50" MaxWidth="100"/>

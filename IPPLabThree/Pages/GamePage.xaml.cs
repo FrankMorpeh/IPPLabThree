@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using IPPLabThree.Servers;
+using IPPLabThree.Views;
+using System.Net;
+using System.Net.Sockets;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace IPPLabThree.Pages
 {
@@ -20,9 +12,42 @@ namespace IPPLabThree.Pages
     /// </summary>
     public partial class GamePage : Page
     {
+        private GamePageView gamePageView;
         public GamePage()
         {
             InitializeComponent();
+        }
+        private void Page_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            gamePageView = new GamePageView(player);
+            AcceptMessagesAsync();
+        }
+        private async Task AcceptMessagesAsync()
+        {
+            await Task.Run(() =>
+            {
+                ServerController serverController = new ServerController(gamePageView);
+                TcpListener serverListener = null;
+
+                try
+                {
+                    serverListener = new TcpListener(serverController.IpAddress, serverController.Port);
+                    serverListener.Start();
+
+                    while (true)
+                    {
+                        try
+                        {
+                            serverController.HandleMessage(serverListener);
+                        }
+                        catch (WebException exc) { }
+                    }
+                }
+                catch (WebException exc)
+                {
+                    serverListener.Stop();
+                }
+            });
         }
     }
 }

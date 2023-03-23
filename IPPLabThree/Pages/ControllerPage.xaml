@@ -18,13 +18,13 @@
 
     <Grid Background="Blue">
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Content="UP"/>
+            <Button Content="UP" Click="Up_Click"/>
             <StackPanel Orientation="Horizontal">
-                <Button Content="LEFT"/>
+                <Button Content="LEFT" Click="Left_Click"/>
                 <GridSplitter Width="100"/>
-                <Button Content="RIGHT"/>
+                <Button Content="RIGHT" Click="Right_Click"/>
             </StackPanel>
-            <Button Content="DOWN"/>
+            <Button Content="DOWN" Click="Down_Click"/>
         </StackPanel>
     </Grid>
 </Page>
