@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPPLabThree", "IPPLabThree\IPPLabThree.csproj", "{1D365D2C-2F3D-4DB8-9C97-D6D547B14E69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D365D2C-2F3D-4DB8-9C97-D6D547B14E69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D365D2C-2F3D-4DB8-9C97-D6D547B14E69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D365D2C-2F3D-4DB8-9C97-D6D547B14E69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D365D2C-2F3D-4DB8-9C97-D6D547B14E69}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {77589C15-E252-4773-8332-CA475D1A2035}
+	EndGlobalSection
+EndGlobal
